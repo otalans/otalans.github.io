@@ -1,0 +1,215 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  text-decoration: none;
+}
+
+body, p, h1, h2, h3, div, span {
+  color: #333;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.container {
+  padding: 15px;
+  max-width: 100%;
+}
+
+section .container {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* header styles */
+header {
+  background-color: #224b34;
+  height: 78px;
+  border-bottom: 5px solid #7f7f7f;
+}
+
+.logo-img img {
+  height: 45px;
+}
+
+.header-nav {
+  position: relative;
+  top: -5px;
+}
+
+a.header-nav-item {
+  color: #fff;
+  font-size: 12px;
+  padding: 6px 12px;
+  text-decoration: none;
+  transition: .2s;
+}
+a.header-nav-item:hover {
+  color: #cecece;
+}
+a.header-nav-item.accent {
+  border: 2px solid #fff;
+  border-radius: 10px;
+}
+
+h2 {
+  text-transform: uppercase;
+  margin: 15px 0;
+  text-align: center;
+  /* font-variant: small-caps; */
+  letter-spacing: -.5px;
+}
+
+/* Campaign card styles */ 
+.campaign-item {
+  display: block;
+  position: relative;
+  border: 1px solid rgba(53,53,53,.1);
+  margin-bottom: 8px;
+}
+
+.campaign-item:hover {
+  border: 1px solid transparent;
+  animation: move-up 250ms ease forwards; 
+  background-color: rgba(237, 237, 237, 0.1);
+}
+
+.campaign-item {
+  animation: move-down 250ms ease forwards;
+}
+
+.campaign-label {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  color: #fff;
+  background-color: rgba(34, 75, 51, 0.75);
+  padding: 2px 8px;
+  border-radius: 2px;
+  font-size: 12px;
+}
+
+.campaign-label svg {
+  position: relative;
+  top: -1px;
+  fill: #fff;
+  margin-right: 4px;
+}
+
+.campaign-item-meta {
+  position: absolute;
+  bottom: 15px;
+  left: calc(20% + 22px);
+  font-size: 12px;
+  color: #b7b7b7;
+}
+
+.campaign-school, .campaign-location {
+  color: #777;
+}
+
+.campaign-location svg {
+  margin-left: 15px;
+  position: relative;
+  top: -1px;
+  fill: rgba(34, 75, 51, 0.75);
+}
+
+.campaign-header {
+  font-size: 18px;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #333;
+}
+
+.campaign-description {
+  font-size: 14px;
+  color: #333;
+}
+
+.campaign-item .campaign-item-inner {
+  max-height: 180px;
+  padding: 15px;
+  align-items: flex-start;
+}
+
+.campaign-img {
+    height: 150px;
+    max-width: 20%;
+    object-fit: cover;
+    border-radius: 2px;
+    margin-right: 15px;
+}
+
+.progress-container {
+  width: 200px;
+  flex: 1 0 200px;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+}
+
+/* progress bar styles */
+
+.text {
+  z-index: 3;
+}
+
+.progress-info {
+  margin-left: 15px;
+}
+
+.progress-info-group {
+  margin-bottom: 12px;
+}
+
+.progress-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-bottom: -4px;
+}
+
+.progress-amount {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.progress-amount small {
+  font-weight: normal;
+  font-size: 12px;
+  color: #777;
+}
+
+/* animations */
+@keyframes move-up {
+  from {
+    transform: translateY(0px);
+    box-shadow: none;
+  }
+  to {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 25px 0 rgba(3, 8, 33, .12);
+  }
+}
+
+@keyframes move-down {
+  from {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 25px 0 rgba(3, 8, 33, .12);
+  }
+  to {
+    transform: translateY(0px);
+    box-shadow: none;
+  }
+}
