@@ -5,16 +5,17 @@ String.prototype.trunc = function(n) {
 };
 
 var progress = 20;
+var shouldShowSpinner = true;
 
-function progressUp() {
-  progress = progress + 20;
-
-  if (progress <= 100) {
-     $('.fill').css('height', progress + '%');
-  }
-}
-
-// On Window Load
-window.onload = function() {
-  $('.fill').css('height', '80%');
-};
+$(window).scroll(function() {
+    if(shouldShowSpinner && $(window).scrollTop() == $(document).height() - $(window).height()) {
+      setTimeout(() => {
+        $('.spinner').addClass('show');
+        setTimeout(() => {
+          $('.onload').fadeIn('slow');
+          $('.spinner').removeClass('show');
+          shouldShowSpinner = false;        
+        }, 1100);
+      })
+    }
+});
